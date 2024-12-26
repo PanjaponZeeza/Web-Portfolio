@@ -43,7 +43,7 @@ function Home() {
 
       {/* ส่วนแสดงรูปภาพโปรไฟล์ */}
       <div className="home-image">
-        <img src="/public/imgs/Zeeza.jpg" alt="Profile" />
+        <img src="/imgs/Zeeza.jpg" alt="Profile" />
       </div>
     </section>
   );
