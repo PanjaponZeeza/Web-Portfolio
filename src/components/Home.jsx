@@ -36,7 +36,7 @@ function Home() {
 
         {/* ปุ่มดาวน์โหลด Resume */}
         <br />
-        <a href="/public/docs/CV Resume.pdf" download className="resume-btn">
+        <a href="/docs/CV Resume.pdf" download className="resume-btn">
           Download Resume
         </a>
       </div>
