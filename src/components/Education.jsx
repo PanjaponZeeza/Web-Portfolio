@@ -9,7 +9,7 @@ const educationData = [
     degree: "Science-Mathematics Program",
     year: "2019 - 2021",
     location: "163 Village No. 2, Ban Kluai, Hua Mueang Subdistrict, Mueang Pan District, Lampang Province 52240",
-    logo: "/public/imgs/MPP.jpg", // โลโก้โรงเรียน
+    logo: "/imgs/MPP.jpg", // โลโก้โรงเรียน
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const educationData = [
     degree: "Bachelor of Computer Science, Faculty of Science",
     year: "2022-present",
     location: "63, Tambon Nong Han, Amphoe San Sai, Chang Wat Chiang Mai 50290",
-    logo: "/public/imgs/MJU_LOGO.svg.png", // โลโก้มหาวิทยาลัย
+    logo: "/imgs/MJU_LOGO.svg.png", // โลโก้มหาวิทยาลัย
   },
 ];
 
