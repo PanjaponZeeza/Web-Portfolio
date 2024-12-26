@@ -1,0 +1,121 @@
+/* ส่วนของ #contact */
+#contact {
+  background: linear-gradient(135deg, #00334E, #004B65); /* กราเดียนต์พื้นหลัง */
+  padding: 40px;
+  text-align: center;
+  color: #00FFA3; /* สีข้อความ */
+  position: relative; /* สำหรับการเพิ่มลูกเล่นพื้นหลัง */
+  overflow: hidden;
+}
+
+/* เพิ่มแอนิเมชันพื้นหลัง */
+#contact::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(234, 226, 228, 0.1), transparent); /* พื้นหลังไล่เฉดแบบวงกลม */
+  animation: glowingBackground 5s infinite alternate; /* การเคลื่อนไหวของพื้นหลัง */
+  z-index: -1; /* อยู่ด้านล่างของเนื้อหา */
+}
+
+/* การเคลื่อนไหวของพื้นหลัง */
+@keyframes glowingBackground {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* ขนาดของหัวข้อ */
+#contact h2 {
+  font-size: 2.5rem; /* เพิ่มขนาดตัวอักษรของหัวข้อ */
+  margin-bottom: 20px; /* เพิ่มระยะห่างด้านล่าง */
+  color: #00FFA3; /* สีเขียวสด */
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* เพิ่มเงาให้กับข้อความ */
+}
+
+/* การจัดตำแหน่งและการแสดงผลของไอคอนในส่วน contact */
+.social-icons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center; /* จัดตำแหน่งไอคอนให้อยู่ตรงกลาง */
+  align-items: center; /* จัดไอคอนให้อยู่ตรงกลางในแนวตั้ง */
+  flex-wrap: nowrap; /* ป้องกันการซ้อนของไอคอน */
+  gap: 20px; /* เพิ่มช่องว่างระหว่างไอคอน */
+}
+
+/* รูปแบบของแต่ละไอคอน */
+.social-icons a {
+  position: relative;
+  width: 70px; /* ลดขนาดความกว้างของไอคอน */
+  height: 70px; /* ลดขนาดความสูงของไอคอน */
+  display: flex;
+  align-items: center; /* จัดเนื้อหาให้อยู่ตรงกลางในแนวตั้ง */
+  justify-content: center; /* จัดเนื้อหาให้อยู่ตรงกลางในแนวนอน */
+  margin: 15px;
+  background: linear-gradient(145deg, #2d2d2d, #404040); /* สีพื้นหลังแบบไล่เฉด */
+  border-radius: 20px; /* โค้งมนแบบสี่เหลี่ยม */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5), 0 0 25px rgba(237, 74, 105, 0.6); /* เพิ่มเงารอบๆ */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* แสงเคลื่อนไหวรอบไอคอน */
+.social-icons a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 255, 163, 0.6), transparent); /* แสงแบบไล่เฉดวงกลม */
+  border-radius: 20px;
+  animation: glow 1.5s linear infinite; /* แสงหมุนรอบ */
+  z-index: 1; /* อยู่ใต้ไอคอน */
+}
+
+/* การเปลี่ยนแปลงเมื่อ hover */
+.social-icons a:hover {
+  transform: scale(1.15); /* ขยายขนาดเมื่อ hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6), 0 0 30px rgba(237, 74, 105, 0.8); /* เพิ่มความเข้มของเงาเมื่อ hover */
+  background-color: #00D4A3; /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+}
+
+/* ไอคอน SVG */
+.social-icons a svg {
+  position: relative;
+  z-index: 2; /* อยู่เหนือแสง */
+  font-size: 36px; /* ลดขนาดไอคอน */
+  color: #fff; /* สีของไอคอน */
+  transition: color 0.3s ease, transform 0.3s ease; /* การเปลี่ยนแปลงสีและการหมุน */
+}
+
+/* หมุนไอคอนเมื่อ hover */
+.social-icons a:hover svg {
+  color: #004B65; /* เปลี่ยนสีไอคอนเมื่อ hover */
+  transform: rotate(360deg); /* หมุนไอคอนเมื่อ hover */
+}
+
+/* สำหรับหน้าจอขนาดเล็ก */
+@media (max-width: 768px) {
+  #contact h2 {
+    font-size: 3rem; /* ลดขนาดหัวข้อสำหรับหน้าจอเล็ก */
+  }
+
+  .social-icons a {
+    width: 60px; /* ลดขนาดไอคอน */
+    height: 60px;
+  }
+
+  .social-icons a svg {
+    font-size: 28px; /* ลดขนาดไอคอน */
+  }
+}

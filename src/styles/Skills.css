@@ -1,0 +1,108 @@
+/* ส่วนของ #skills */
+#skills {
+  background: linear-gradient(135deg, #00334E, #004B65); /* ไล่เฉดสีน้ำเงินเข้ม */
+  padding: 50px;
+  text-align: center;
+  color: #EAF4F4; /* สีเขียวอ่อน */
+}
+
+/* สไตล์ของหัวข้อหลักใน #skills */
+#skills h2 {
+  font-size: 2.5rem;
+  color: #00FFA3; /* สีเขียวสด */
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ส่วนของหมวดหมู่ทักษะ */
+.skills-category {
+  margin-bottom: 40px;
+}
+
+.skills-category h3 {
+  font-size: 1.8rem;
+  color: #B3E5E5; /* สีเขียวฟ้า */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px; /* เพิ่มระยะห่างระหว่างตัวอักษร */
+}
+
+/* การจัดการกับการแสดงทักษะใน container */
+.skills-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* สไตล์ของแต่ละทักษะ */
+.skill {
+  background: #004B65; /* สีน้ำเงินเข้ม */
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  width: 120px;
+  height: 120px; /* กำหนดขนาดกล่อง */
+  border: 2px solid #00FFA3; /* กรอบสีเขียวสด */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  animation: floating 4s infinite ease-in-out; /* เพิ่ม Animation Floating */
+  box-shadow: 0 0 15px rgba(0, 255, 163, 0.3); /* Glow Effect */
+}
+
+/* เอฟเฟกต์ Hover */
+.skill:hover {
+  transform: translateY(-10px) rotate(10deg); /* หมุนไอคอนเมื่อ hover */
+  box-shadow: 0 4px 20px rgba(0, 255, 163, 0.6); /* Glow Effect ชัดขึ้น */
+  background-color: #20d5abf8; /* เปลี่ยนพื้นหลังเมื่อ hover */
+  border-color: #008066; /* กรอบสีเขียวเข้มเมื่อ hover */
+}
+
+/* การตั้งค่า Animation สำหรับการลอย */
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* สไตล์ของข้อความในแต่ละทักษะ */
+.skill p {
+  font-size: 1.2rem;
+  color: #B3E5E5; /* สีของข้อความ */
+  margin-top: 10px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* เงาข้อความ */
+}
+
+/* สีของไอคอนในแต่ละทักษะ */
+.skill svg {
+  color: #00FFA3; /* สีเขียวสด */
+  transition: transform 0.3s ease;
+}
+
+/* เอฟเฟกต์ของไอคอนเมื่อ hover */
+.skill:hover svg {
+  transform: rotate(15deg); /* หมุนไอคอนเมื่อ hover */
+}
+
+/* สไตล์สำหรับหน้าจอเล็ก (Mobile) */
+@media (max-width: 768px) {
+  .skills-container {
+    flex-direction: column;
+    gap: 20px; /* ระยะห่างระหว่างทักษะ */
+  }
+
+  .skill {
+    width: 100px;
+    height: 100px;
+    padding: 15px;
+  }
+
+  .skill p {
+    font-size: 1rem; /* ขนาดข้อความเล็กลง */
+  }
+}

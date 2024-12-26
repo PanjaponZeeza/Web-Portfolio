@@ -1,0 +1,128 @@
+/* นำเข้าฟอนต์จาก Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+/* กำหนดสไตล์ให้กับ body */
+body {
+  font-family: 'Roboto', Arial, sans-serif; /* ใช้ Roboto สำหรับข้อความหลัก */
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, #00334E, #004B65); /* เปลี่ยนเฉดสีให้ใกล้เคียงกับ home */
+  color: #EAF4F4; /* สีข้อความหลักจาก home */
+}
+
+/* กำหนดสไตล์ให้กับ header, section และ footer */
+header, section, footer {
+  padding: 20px;
+  text-align: center;
+}
+
+/* กำหนดสไตล์ให้กับหัวข้อหลักใน header */
+header h1 {
+  background: linear-gradient(90deg, #00FFA3, #00D4A3); /* สีไล่เฉดเขียวสดใส */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif; /* ใช้ Playfair Display กับหัวข้อ */
+}
+
+/* กำหนดสไตล์ให้กับปุ่ม */
+button {
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #008066, #00FFA3); /* ไล่สีเขียวเข้มไปเขียวสดใส */
+  border: none;
+  color: #EAF4F4; /* สีข้อความหลัก */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif; /* ใช้ Roboto สำหรับปุ่ม */
+  font-size: 1rem;
+}
+
+/* สไตล์เมื่อ hover ปุ่ม */
+button:hover {
+  background: linear-gradient(90deg, #00FFA3, #00D4A3); /* เปลี่ยนเป็นสีเขียวเมื่อ hover */
+  transform: scale(1.05);
+}
+
+/* กำหนดสไตล์ให้กับ navigation */
+nav {
+  background: linear-gradient(90deg, #00334E, #004B65); /* สีพื้นหลังเหมือน home */
+  padding: 20px;
+  text-align: center;
+}
+
+/* สไตล์ลิงก์ใน navigation */
+nav a {
+  color: #EAF4F4; /* สีข้อความเหมือนใน home */
+  text-decoration: none;
+  padding: 0 15px;
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif; /* ใช้ Playfair Display สำหรับลิงก์ */
+}
+
+/* กำหนดสไตล์เส้นใต้ของลิงก์ */
+nav a::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #00D4A3; /* สีเขียวอมฟ้า */
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+/* สไตล์เส้นใต้ของลิงก์เมื่อ hover */
+nav a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* เปลี่ยนสีของลิงก์เมื่อ hover */
+nav a:hover {
+  color: #fff; /* สีเขียวสดใสเมื่อ hover */
+}
+
+/* กำหนดสไตล์ให้กับข้อมูลติดต่อ */
+.contact-info p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif; /* ใช้ Roboto สำหรับข้อความใน Contact */
+}
+
+/* กำหนดสไตล์ให้กับไอคอนในข้อมูลติดต่อ */
+.contact-info svg {
+  color: #00D4A3; /* สีเขียวอมฟ้า */
+  margin-right: 10px;
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+/* สไตล์ไอคอนเมื่อ hover */
+.contact-info svg:hover {
+  color: #00FFA3; /* สีเขียวสดใสเมื่อ hover */
+}
+
+/* สไตล์สำหรับอุปกรณ์ที่มีขนาดหน้าจอเล็กกว่า 768px */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* ปรับขนาดฟอนต์เล็กลง */
+  }
+
+  header h1 {
+    font-size: 2rem; /* ลดขนาดฟอนต์ของหัวข้อ */
+  }
+
+  button {
+    padding: 8px 16px; /* ปรับขนาดปุ่ม */
+  }
+}
