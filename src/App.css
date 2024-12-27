@@ -8,6 +8,7 @@ body {
   padding: 0;
   background: linear-gradient(180deg, #00334E, #004B65); /* เปลี่ยนเฉดสีให้ใกล้เคียงกับ home */
   color: #EAF4F4; /* สีข้อความหลักจาก home */
+  overflow-x: hidden; /* ปิดการเลื่อนในแนวนอน */
 }
 
 /* กำหนดสไตล์ให้กับ header, section และ footer */
@@ -22,7 +23,7 @@ header h1 {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 5vw, 2.5rem); /* ปรับขนาดฟอนต์ให้ยืดหยุ่น */
   font-weight: bold;
   font-family: 'Playfair Display', serif; /* ใช้ Playfair Display กับหัวข้อ */
 }
@@ -51,6 +52,9 @@ nav {
   background: linear-gradient(90deg, #00334E, #004B65); /* สีพื้นหลังเหมือน home */
   padding: 20px;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* สไตล์ลิงก์ใน navigation */
@@ -97,6 +101,7 @@ nav a:hover {
   align-items: center;
   justify-content: center;
   font-family: 'Roboto', sans-serif; /* ใช้ Roboto สำหรับข้อความใน Contact */
+  text-align: center;
 }
 
 /* กำหนดสไตล์ให้กับไอคอนในข้อมูลติดต่อ */
@@ -119,10 +124,19 @@ nav a:hover {
   }
 
   header h1 {
-    font-size: 2rem; /* ลดขนาดฟอนต์ของหัวข้อ */
+    font-size: 1.8rem; /* ลดขนาดฟอนต์ของหัวข้อ */
+  }
+
+  nav {
+    flex-direction: column; /* เปลี่ยนเมนูให้เรียงแนวตั้ง */
   }
 
   button {
     padding: 8px 16px; /* ปรับขนาดปุ่ม */
+  }
+
+  .contact-info {
+    flex-direction: column;
+    gap: 10px; /* เพิ่มช่องว่างระหว่างองค์ประกอบ */
   }
 }
